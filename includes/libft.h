@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nidruon <nidruon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nidruon <nidruon@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:19:26 by nidruon           #+#    #+#             */
-/*   Updated: 2024/11/15 15:00:26 by nidruon          ###   ########.fr       */
+/*   Updated: 2025/06/28 21:24:51 by nidruon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 # include <stdlib.h>
 # include <string.h>
+# include <stdarg.h>
 # include <unistd.h>
+
+# define BUFFER_SIZE 42
 
 void	ft_putchar(char c);
 void	ft_bzero(void *s, size_t n);
@@ -59,4 +62,18 @@ int		ft_isprint(int c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+void	ft_putnbr_base_fd(unsigned long nb, char *base, int fd);
+
+char	*get_next_line(int fd);
+
+int		ft_print_char(va_list *args);
+int		ft_print_hex(va_list *args, char format);
+int		ft_print_int(va_list *args);
+int		ft_print_hex_ptr(unsigned long num);
+int		ft_print_ptr(va_list *args);
+int		ft_print_str(va_list *args);
+int		ft_print_unsigned(va_list *args);
+int		ft_print_arg(char c, va_list *args);
+int		ft_printf(const char *format, ...);
+
 #endif
